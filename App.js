@@ -12,7 +12,6 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
         <TextInput
           style = {styles.input}
           placeholder = 'ingrese texto'
@@ -28,16 +27,16 @@ export default function App() {
         <Separator/>
         <Text>Texto ingresado: {inputText}</Text>
         <StatusBar style="auto" />
-      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 30,
+    padding: 15,
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: '',
     marginHorizontal: 30,
   },
   input: {
