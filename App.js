@@ -7,7 +7,8 @@ const Separator = () => (
 
 export default function App() {
 
-  const [text, onChangeText] = useState(null);
+  const [text, onChangeText] = useState("");
+  const [inputText, setInputText] = useState(null);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -18,12 +19,14 @@ export default function App() {
           onChangeText = {onChangeText}
           value = {text}
         />
+        <Text>Contador: <Text style={styles.counter}>{text.length}</Text></Text>
         <Button
           style = {styles.button}
           title = "Presioname"
+          onPress = {() => setInputText(text)}
         />
         <Separator/>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>Texto ingresado: {inputText}</Text>
         <StatusBar style="auto" />
       </View>
     </SafeAreaView>
@@ -47,5 +50,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     borderBottomColor: '#737373',
     borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  counter: {
+    color: '#EE4B2B'
   }
 });
